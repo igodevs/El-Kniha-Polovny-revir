@@ -1,0 +1,8 @@
+docker ps - show all containers
+docker exec -it 4a6594c6a0ca bash - connect do docker container with id -- postgres
+
+psql -h localhost -p 5432 -U postgres
+\l - list of all database 
+
+\connect database_name
+\dt - list of all tables

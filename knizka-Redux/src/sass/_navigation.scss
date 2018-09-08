@@ -1,0 +1,153 @@
+
+.navigation {
+
+    display: flex;
+    justify-content: space-between;
+    transition: background-color .2s;
+    position: fixed;
+    left: 3rem;
+    right: 3rem;
+    width: auto;
+    padding-top: 3rem;
+    height: 9rem;
+    top: 0;
+    z-index: 10;
+    background-color: $color-white;
+
+    @include respond(tab-port){
+        left:0;
+        right:0;
+    }
+        
+
+    &-scroll {
+        transition: background-color .9s;
+        position: fixed;
+        left: 3rem;
+        right: 3rem;
+        width: auto;
+        // width: 96.9%;
+        // padding-right: 0rem;
+        padding-top: 3rem;
+        height: 9rem;
+        // background-color: #fff;
+        top: 0;
+        // padding-top: -3rem;
+        z-index: 10;
+        background-color: $color-secondary;
+        @include respond(tab-port){
+            left:0;
+            right:0;
+        }
+        
+    
+    }
+    
+
+    
+    &__logo-box{
+
+        margin-left: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__logo {
+        width: 5rem;
+        height: 5rem;
+        // margin-bottom: .5rem;
+        cursor: pointer;
+
+        
+
+    
+    }
+
+    &__right {
+        &,
+        &:link,
+        &:visited {
+            display: flex;
+            font-size: 1.6rem;
+            padding: 1rem;
+            margin-right: 2rem;
+            
+            
+        }
+
+    }
+
+    
+
+
+
+    &__right-btn {
+
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        transition: all .2s;
+        // box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+        
+
+        &:hover {
+            background-color: $color-grey-light-1;
+            transform: translateY(-3px);
+            border-radius: 5px;
+            box-shadow: 0 2rem 2.5rem rgba($color-black, .2);
+
+        }
+
+        &:active {
+            background-color: $color-white;
+            transform: translateY(0px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+        }
+
+        &:not(:last-child){
+            margin-right: 2rem;
+
+            
+        }
+        &-scroll {
+            color: white;
+
+            &:hover {
+                background-color: $color-grey-dark-1;
+                transform: translateY(-3px);
+                border-radius: 5px;
+                box-shadow: 0 2rem 2.5rem rgba($color-black, .2);
+    
+            }
+            &:active {
+                background-color:$color-grey-dark-2;
+                transform: translateY(0px);
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+            }
+        }
+        
+
+        
+    }
+
+    
+
+
+
+
+}
+
+// .navigation-scroll {
+//     transition: background-color .9s;
+//     position: fixed;
+//     left: 3rem;
+//     // width: 96.9%;
+//     padding-right: 0rem;
+//     padding-top: 3rem;
+//     height: 9rem;
+//     background-color: #fff;
+//     top: 0;
+//     padding-top: -3rem;
+//     z-index: 10;
+//     background-color: $color-secondary;
+    
+
+// }

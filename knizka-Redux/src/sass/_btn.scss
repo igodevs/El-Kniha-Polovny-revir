@@ -1,0 +1,80 @@
+.btn-brown {
+    background-image: linear-gradient(to right, #c79081 0%, #dfa579 100%);
+
+    &:hover{
+        background-image: linear-gradient(to right, #dfa579 0%, #c79081 100%);
+    }
+}
+
+.buttons {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #E7E9BB 0%, #e2d1c3 100%);
+    :not(:last-child) {
+        margin-right: 1rem;
+    }
+
+}
+
+.buttons-ann {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left, #c79081 0%, #dfa579 100%);
+    :not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    
+}
+.buttons-profile {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+    :not(:last-child) {
+        margin-right: 1rem;
+    }
+}
+
+.btn-array {
+    font-family: inherit;
+    padding: .5rem;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid $color-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 .3rem .5rem rgba($color-black, .2);
+    transition: all .4s;
+
+}
+
+.btn-array {
+    font-family: inherit;
+    padding: .5rem .8rem;
+    
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid $color-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 .3rem .5rem rgba($color-black, .2);
+
+    &:hover {
+        transform: translateY(-4px);
+        background-color: $color-grey-light-2;
+    }
+
+    
+}
+.btn-array-clicked {
+    font-family: inherit;
+    padding: .5rem .7rem;
+    border-radius: 5px;
+    outline: none;
+    background-color: $color-primary;
+    border: 1px solid $color-white;
+    color: white;
+    transform: translateY(0px);
+    box-shadow: 0 .1rem .2rem rgba($color-black, .2);
+}

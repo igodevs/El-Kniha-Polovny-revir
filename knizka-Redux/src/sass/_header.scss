@@ -1,0 +1,17 @@
+.header {
+    margin-top: 9rem;
+    height: 85rem;
+    background-image: linear-gradient(to right bottom, 
+        rgba($color-primary, 0.8), 
+        rgba($color-secondary, 0.8)), 
+        url('../img/fog-foggy-forest-4827.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+}

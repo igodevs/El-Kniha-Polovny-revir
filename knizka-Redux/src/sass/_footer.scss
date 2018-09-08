@@ -1,0 +1,64 @@
+.footer {
+    background-color: $color-grey-dark-3;
+    padding: 8rem 0;
+    font-size: 1.6rem;
+    color: $color-grey-dark-2;
+    display: flex;
+    justify-content: space-around;
+    
+
+    @media only screen and (max-width: 900px) {
+
+        flex-direction: column;
+    }
+
+    
+
+    &__navigation {
+
+		padding-top: 2rem;
+        
+
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__link {
+        margin-left: .5rem;
+		&:link,
+		&:visited {
+			color: $color-grey-light-1;
+			background-color: $color-grey-dark-3;
+			text-decoration: none;
+			text-transform: uppercase;
+            transition: all .2s;
+            
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: rotate(5deg) scale(1.3);
+            cursor: pointer;
+		}
+	}
+
+    &__item {
+        &:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+    }
+
+    &__copyright{
+        padding: 2rem 3rem;
+        display: flex;
+        justify-content: center;
+    }
+}

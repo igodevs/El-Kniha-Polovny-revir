@@ -1,0 +1,38 @@
+version: '3.6'
+
+
+services:
+
+  # Backend API
+  knizka-server:
+    container_name: backend-book
+    build: ./
+    command: npm start
+    working_dir: /usr/src/knizka-server
+    environment:
+      POSTGRES_URI: postgres://sally:secret@postgres:5432/knizka-server-docker
+      REDIS_URI: redis://redis:6379
+    links:
+      - postgres
+      - redis
+    ports:
+    - "3000:3000"
+    volumes:
+    - ./:/usr/src/knizka-server
+
+  #postgres
+  postgres:
+    environment:
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: knizka-server-docker
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
+  
+  #redis
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"

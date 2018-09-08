@@ -1,0 +1,60 @@
+$color-primary: #a2ab58;
+$color-secondary: #636363;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #eee;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    
+    font-size: 62.5%;
+
+
+    @include respond(tab-land){
+    	font-size: 56.25%; // 1 rem = 9px
+    }
+    
+
+    @include respond(tab-port){
+    	font-size: 50%; // 1 rem = 8px
+    }
+
+    // @include respond(big-desktop){
+    // 	font-size: 75%; // 1 rem = 12
+    // }
+      
+
+}
+
+body {
+    // font-family: 'Open sans', sans-serif;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",sans-serif;
+    font-weight: 200;
+    box-sizing: border-box;
+    padding: 0rem 3rem 3rem 3rem;
+    @include respond(tab-port){
+    	padding: 0;
+    }
+}
+
+.u-margin-bottom-medium {
+    margin-bottom: 5rem;
+}
+

@@ -1,0 +1,153 @@
+.section_registration {
+    margin-top: 9rem;
+    min-height: 80rem;
+    width: 100%;
+    background-color: $color-grey-light-2;
+    position: relative;
+
+    
+    // flex-wrap: wrap;
+
+    &__form {
+        width: 40rem;
+    }
+}
+
+.registration {
+    min-height: 71rem;
+    width: 100%;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    
+
+    
+    
+
+    &__header {
+        width: 50%;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
+        font-family: inherit;
+        color: $color-primary;
+        margin-bottom: 5rem;
+
+        &-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+    }
+
+    &__block {
+         height: auto;
+        width: 80%;
+        // display: flex;
+        // justify-content: center;
+        
+        // flex-wrap: wrap;
+        
+        &--member {
+            padding: 2rem 1rem;
+            margin: 2rem 2rem;
+            height: auto;
+            width: 30%;
+            background-color: 	#D3D3D3;
+            border-radius: 8px;
+            box-shadow: 0 1rem 2rem rgba($color-black, .3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all .4s;
+            position: relative;
+            &:hover{
+                background-color: 	#D8D8D8;
+                transform: translateY(-3px);
+                box-shadow: 0 1rem 5rem rgba($color-black, .3);
+            }
+
+            :not(:last-child){
+                margin-bottom: 1rem;
+            }
+
+            &--text {
+                font-size: 1.7rem;
+                font-family: inherit;
+                margin: 1rem 2rem;
+            }
+
+            &--inputs {
+                width: 90%;
+            }
+
+            &--input {
+                width: 100%;
+
+                &_label {
+                    margin-left: 1.9rem;
+                    margin-top: 0;
+                }
+
+                &_block {
+                    width: 100%;
+                }
+            }
+
+            &-open {
+                position: absolute;
+                width: 100%;
+            height: 101%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // top:0;
+            //  right:1rem;
+            // top:50%;
+            // right: 50%
+            transform: translateY(-24px);
+            font-style: inherit;
+            font-size: 3rem;
+            border-radius: 8px;
+            background-color: rgba($color-grey-light-2, .8);
+            overflow: hidden;
+
+            &-succes-registration{
+                padding-top: 3rem;
+                justify-content: flex-end;
+                align-items: center;
+                
+
+                :not(:last-child){
+                    margin-bottom: 5rem;
+                }
+
+            }
+
+            &-bg{
+                background-color: rgba($color-grey-light-2, .9);
+                &close{
+                    background-color: rgba($color-primary, .8);
+                }
+            }
+
+            &-text {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+    
+            }
+        }
+        
+
+    }
+}

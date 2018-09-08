@@ -1,0 +1,191 @@
+#modal-root {
+    position: relative;
+    z-index: 999;
+    background-color: #fff;
+}
+
+.profile-modal {
+    background-color: rgba(#77857B, 0.5);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top:0;
+	left: 0;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.profile {
+    height: auto;
+    width: 80%;
+    background-color: #fff;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 2rem 5rem rgba($color-black, .3);
+
+    &__content {
+        margin-top: 6rem;
+        height: 84%;
+        display: flex;
+        overflow: hidden;
+        
+
+        &-text{
+            display: flex;
+            align-items: center;
+            width: 60%;
+            height: 100%;
+            padding: 1rem 5.5rem;
+            font-size: 1.4rem;
+            font-family: inherit;
+            line-height: 180%;
+            
+
+        }
+    
+        &-edit {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 40%;
+            height: 100%;
+
+            &-form__group{
+                padding-right: 6rem;
+                width: 100%;
+            }
+
+            &-form__input {
+                background-color: $color-grey-light-2;
+                width: 100%;
+            }
+
+            &-form__btn{
+                display: flex;
+                justify-content: center;
+            }
+            &-password-change{
+                width: 100%;
+
+            }
+
+            &-password-inputs {
+                width: 100%;
+            }
+        }
+
+        
+
+    }
+
+    &__book {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    &__close {
+        position: absolute;
+        opacity: none;
+        top: 2rem;
+        right: 2.3rem;
+        font-size: 3rem;
+        font-style: bold;
+        cursor: pointer;
+        height: auto;
+        width:3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.a{
+    display: flex;
+    width: 100%;
+     position: relative;
+}
+
+.p{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: -0.9rem;
+    right: 7rem;
+    font-size: 5rem;
+
+    color: red;
+}
+
+.p-equal{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: -0.9rem;
+    right: 7rem;
+    font-size: 5rem;
+
+    color: $color-primary;
+}
+
+.another_book_data {
+    min-height: 40rem;
+    width: 50%;
+    background-color: #fff;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 2rem 5rem rgba($color-black, .3);
+    padding: 3rem;
+
+    &__list {
+		// position: absolute;
+		// top:50%;
+		// left:50%;
+		// transform: translate(-50%, -50%);
+		list-style: none;
+		text-align: center;
+		width: 100%;
+
+	}
+
+	&__item {
+		margin: 1rem;
+	}
+
+	&__link{
+		&:link,
+		&:visited {
+            display: flex;
+            
+			font-size: 2rem;
+			font-weight: 300;
+			padding: 1rem 2rem;
+			color: black;
+			text-decoration: none;
+			text-transform: uppercase;
+			background-image: linear-gradient(120deg, transparent 0%,
+				transparent 50%,
+				$color-white 50%);
+			background-size: 226%;
+			transition:all .4s;
+			span {
+				margin-right: 1.5rem;
+				display: inline-block;
+			}
+			
+		}
+
+		&:hover,
+		&:active {
+			background-position: 100%;
+			color: $color-grey-dark-2;
+			transform: translateX(1rem);
+		}
+	}
+
+}
