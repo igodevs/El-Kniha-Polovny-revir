@@ -18,6 +18,7 @@ const profile = require('./controllers/profile');
 const auth = require('./controllers/authorization');
 const book = require('./controllers/book');
 const announcements = require('./controllers/announcements');
+const editUsers = require('./controllers/edit-users');
 const db = knex({
     client: 'pg',
     // connection: {
@@ -70,6 +71,7 @@ app.get('/myBook/:id_user/:name_pz/:offsetData', auth.requireAuth, (req, res) =>
 app.post('/myBook/:id', auth.requireAuth, (req, res) => {profile.profileBookUpdate(req, res, db)})
 app.get('/numberOfRowsMyBook/:id_user/:name_pz', auth.requireAuth, (req, res) => {profile.getNumberOfMyBookItems(req, res, db)})
 app.post('/myBookLeave', auth.requireAuth, (req, res) => {book.leaveTheDistrict(req,res,db)})
+app.get('/getUsers/:name_pz', auth.requireAuth, (req, res) => {editUsers.getUsers(req,res,db)})
 
 
 app.post('/announcements',upload.single('selectedFile'), (req, res) => {
