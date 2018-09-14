@@ -111,6 +111,9 @@ body {
   .navigation__logo-box {
     margin-left: 3rem;
     margin-bottom: 2rem; }
+    .navigation__logo-box :hover {
+      transition: all .2s;
+      transform: translateY(-2px); }
   .navigation__logo {
     width: 5rem;
     height: 5rem;
@@ -128,7 +131,8 @@ body {
       background-color: #f9f7f6;
       transform: translateY(-3px);
       border-radius: 5px;
-      box-shadow: 0 2rem 2.5rem rgba(0, 0, 0, 0.2); }
+      box-shadow: 0 2rem 2.5rem rgba(0, 0, 0, 0.2);
+      color: #a2ab58; }
     .navigation__right-btn:active {
       background-color: #fff;
       transform: translateY(0px);
@@ -141,7 +145,8 @@ body {
         background-color: #777;
         transform: translateY(-3px);
         border-radius: 5px;
-        box-shadow: 0 2rem 2.5rem rgba(0, 0, 0, 0.2); }
+        box-shadow: 0 2rem 2.5rem rgba(0, 0, 0, 0.2);
+        color: #a2ab58; }
       .navigation__right-btn-scroll:active {
         background-color: #999;
         transform: translateY(0px);
@@ -979,3 +984,30 @@ body {
           justify-content: center;
           align-items: center;
           text-align: center; }
+
+.section-edit-users {
+  margin-top: 9rem;
+  height: 70rem;
+  width: 100%;
+  padding: 10rem 5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.edit-user {
+  background-color: #a2ab58;
+  height: 20rem;
+  width: 20rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .edit-user :hover {
+    transition: all .3s;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5); }
+  .edit-user-p {
+    font-size: 1.6rem; }

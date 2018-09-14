@@ -5,6 +5,7 @@ import InputForm from '../components/InputForm/InputForm';
 import AnnouncementsInputForm from '../components/AnnouncementsInputForm/AnnouncementsInputForm';
 import Button from '../components/Button/Button'
 import Announcements from '../components/Announcements/Announcements';
+import EditUsers from '../components/EditUsers/EditUsers';
 
 
 
@@ -201,24 +202,29 @@ class SignIn extends Component {
             }
         </div>
           
-        : <div>
-          <AnnouncementsInputForm user = {this.props.user}
-          updateAnnouncements = {this.props.updateAnnouncements}
-          onUpdateAnnouncements = {this.props.onUpdateAnnouncements}/>
-          <Announcements user = {this.props.user}
-          offsetDataAnnouncements = {this.props.offsetDataAnnouncements}
-          selectedFile = {this.props.selectedFile}
-          onDownloadFileNameChange = {this.props.onDownloadFileNameChange}
-          updateAnnouncements = {this.props.updateAnnouncements}
-          onUpdateAnnouncements = {this.props.onUpdateAnnouncements}
-          />
-          { this.props.numberOfDataTable > 2 &&
-              <div className = 'buttons-ann'> 
-                { this.buttons(this.props.numberOfDataAnnouncements, 5, 'announcements')}
-              </div>
+        : (this.props.route === 'announcements' ?
+          <div>
+            <AnnouncementsInputForm user = {this.props.user}
+            updateAnnouncements = {this.props.updateAnnouncements}
+            onUpdateAnnouncements = {this.props.onUpdateAnnouncements}/>
+            <Announcements user = {this.props.user}
+            offsetDataAnnouncements = {this.props.offsetDataAnnouncements}
+            selectedFile = {this.props.selectedFile}
+            onDownloadFileNameChange = {this.props.onDownloadFileNameChange}
+            updateAnnouncements = {this.props.updateAnnouncements}
+            onUpdateAnnouncements = {this.props.onUpdateAnnouncements}
+            />
+            { this.props.numberOfDataTable > 2 &&
+                <div className = 'buttons-ann'> 
+                  { this.buttons(this.props.numberOfDataAnnouncements, 5, 'announcements')}
+                </div>
 
-            }
-        </div>
+              }
+          </div>
+          : <div>
+            <EditUsers user = {this.props.user}/>
+            </div>
+        )
 
         
           

@@ -8,7 +8,7 @@ class Registration extends React.Component {
         super();
         this.state = {
             isLoad:false,
-            registrationSuccess: true,
+            registrationSuccess: false,
         }
     }
 

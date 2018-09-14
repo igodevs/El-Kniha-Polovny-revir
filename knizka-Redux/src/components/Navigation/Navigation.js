@@ -114,6 +114,15 @@ class Navgation  extends React.Component {
 								}}>
 									<p className = ""> Profil </p>
 							</div>
+							
+							{
+								this.props.user.function_pz === 'Hospodár' &&
+								<div className={this.state.buttonClass} onClick = {() => {
+									changeRoute('edit-users');
+								}}>
+									<p className = ""> Úprava členov </p>
+							</div>
+							}
 							<div className={this.state.buttonClass} onClick = {() => {
 									this.props.onChangePasswordOpen(true)
 								}}>

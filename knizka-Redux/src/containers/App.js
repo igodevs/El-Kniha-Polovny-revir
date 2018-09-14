@@ -245,6 +245,11 @@ class App extends Component {
         } else if(route === 'announcements'){
             this.props.onRouteChange('announcements');
             this.props.onSignIn(true);
+            
+        }
+        else if(route === 'edit-users'){
+            this.props.onRouteChange('edit-users');
+            
         }
     }
 

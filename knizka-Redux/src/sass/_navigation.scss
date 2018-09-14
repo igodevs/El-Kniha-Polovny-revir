@@ -46,9 +46,12 @@
 
     
     &__logo-box{
-
         margin-left: 3rem;
         margin-bottom: 2rem;
+        :hover{
+            transition: all .2s;
+            transform: translateY(-2px); 
+        }
     }
 
     &__logo {
@@ -56,10 +59,6 @@
         height: 5rem;
         // margin-bottom: .5rem;
         cursor: pointer;
-
-        
-
-    
     }
 
     &__right {
@@ -93,6 +92,7 @@
             transform: translateY(-3px);
             border-radius: 5px;
             box-shadow: 0 2rem 2.5rem rgba($color-black, .2);
+            color: $color-primary;
 
         }
 
@@ -115,6 +115,7 @@
                 transform: translateY(-3px);
                 border-radius: 5px;
                 box-shadow: 0 2rem 2.5rem rgba($color-black, .2);
+                color: $color-primary;
     
             }
             &:active {

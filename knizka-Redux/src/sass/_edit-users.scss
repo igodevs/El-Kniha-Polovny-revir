@@ -1,0 +1,47 @@
+.section-edit-users {
+    margin-top: 9rem;
+    height: 70rem;
+    width: 100%;
+    padding: 10rem 5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+    
+    
+}
+.edit-user {
+   background-color: $color-primary;
+    height: 20rem;
+    width: 20rem;
+    margin: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 .5rem 2rem rgba($color-black, .3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    :hover{
+        transition: all .3s;
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 3rem rgba($color-black, .5);
+    }
+
+    
+    
+
+    
+
+    // :not(:last-child){
+    //     margin-bottom: 1rem;
+    // }
+
+    &-p{
+        font-size: 1.6rem;
+    }
+
+
+    
+}
