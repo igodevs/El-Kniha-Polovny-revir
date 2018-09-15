@@ -1,20 +1,53 @@
 .section-edit-users {
     margin-top: 9rem;
-    height: 70rem;
+    min-height: 70rem;
     width: 100%;
-    padding: 10rem 5rem;
+    padding: 10rem 20rem;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: center
+    
+
+    // &:not(:last-child){
+    //     margin-right: 5rem;
+    // }
+
+    
 
     
     
     
 }
+
+.new-user-block {
+    width: 30%;
+    margin-right: 5rem;
+    &__header {
+        font-family: inherit;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+.edit-users-block {
+    width: 70%;
+    
+    
+}
+
+.edit{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
 .edit-user {
    background-color: $color-primary;
-    height: 20rem;
-    width: 20rem;
+    height: 25rem;
+    min-width: 25rem;
     margin: 2rem;
     border-radius: 5px;
     box-shadow: 0 .5rem 2rem rgba($color-black, .3);
@@ -22,24 +55,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    :hover{
-        transition: all .3s;
+    // padding-top: 2rem;
+    transition: all .3s;
+    position: relative;
+    &:hover{
         transform: translateY(-3px);
-        box-shadow: 0 1rem 3rem rgba($color-black, .5);
+        box-shadow: 0 1rem 2.5rem rgba($color-black, .4);
     }
 
-    
-    
 
     
-
-    // :not(:last-child){
-    //     margin-bottom: 1rem;
-    // }
-
     &-p{
         font-size: 1.6rem;
+        
+            margin-bottom: 1.5rem;
+        
+
+    }
+
+    &__button {
+        margin-top: 2rem;
+    }
+
+    &__input {
+        text-align: center;
+        
+        &-label{
+            margin-left: 0;
+            margin-top: .5rem;
+        }
     }
 
 

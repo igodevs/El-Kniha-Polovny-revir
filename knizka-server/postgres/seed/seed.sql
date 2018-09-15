@@ -8,13 +8,13 @@ INSERT INTO users (name, email, name_pz,function_pz, joined) values ('Adam Vrba'
 
 INSERT INTO users (name, email, name_pz, function_pz, joined) values ('Adam Vrba2', 'c@c.com', 'PZ Vyšne', 'Hospodár', '2018-01-01');
 
-INSERT INTO login (hash,email) values('$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'igor@gmail.com');
+INSERT INTO login (id, hash,email) values(1, '$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'igor@gmail.com');
 
-INSERT INTO login (hash,email) values('$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'a@a.com');
+INSERT INTO login (id, hash,email) values(2, '$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'a@a.com');
 
-INSERT INTO login (hash,email) values('$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'b@b.com');
+INSERT INTO login (id, hash,email) values(3, '$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'b@b.com');
 
-INSERT INTO login (hash,email) values('$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'c@c.com');
+INSERT INTO login (id, hash,email) values(4, '$2a$10$EDG6KncDz2vVu0E8QC5acOM.sdujt8EkZ2.wXHg49IEBYOK3GzUpy', 'c@c.com');
 
 INSERT INTO book_PZ_Kamenec_Vyšná_Sitnica (
     id_user, email,  date, insert_time, time, name, guest_name, location, 

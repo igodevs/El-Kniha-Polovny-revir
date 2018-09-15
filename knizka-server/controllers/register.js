@@ -113,25 +113,7 @@ const registerPZ = (req, res, db) => {
 
 	.catch(err => res.status(400).json('error create table'))
 
-	// db.schema.createTable(`announcements_${lower_name_pz}`, (table) => {
-	// 	table.increments()
-	// 	table.integer('id_user').notNullable();
-	// 	table.string('name', 100).notNullable();
-	// 	table.string('function_pz', 40).notNullable();
-	// 	table.text('ann').notNullable();
-	// 	table.text('file');
 
-	// })
-	// .then(data => db.commit(data))
-	// .then(resp => res.status(200).json('registration pz ok'))
-	// .catch(err => res.status(400).json('error register pz'))
-	// .catch(err => res.status(400).json(err));
-	// setTimeout(() => {
-	// 	db.select('*')
-	// .from(`book_${lower_name_pz}`)
-	// .then(data => console.log("data", data))
-	// .catch(err => console.log("err",err))
-	// }, 100);
 		
 }
 
@@ -151,13 +133,7 @@ const createTableAnn = (req, res, db) => {
 	})
 	.then(resp => res.status(200).json('success'))
 	.catch(err => res.status(400).json('error register pz'))
-	// .catch(err => res.status(400).json(err));
-	// setTimeout(() => {
-	// 	db.select('*')
-	// .from(`book_${lower_name_pz}`)
-	// .then(data => console.log("data", data))
-	// .catch(err => console.log("err",err))
-	// }, 100);
+
 		
 }
 
@@ -166,27 +142,13 @@ const registerUsers = (req, res, db, bcrypt) => {
 	const password = 'heslo';
 
 	const hash = bcrypt.hashSync(password);
-	// .catch(err => res.status(400).json(err));
-	// setTimeout(() => {
-	// 	db.select('*')
-	// .from(`book_${lower_name_pz}`)
-	// .then(data => console.log("data", data))
-	// .catch(err => console.log("err",err))
-	// }, 100);
 
-	// console.log(users.length);
 	let count = 0;
 	users.map((user, i) => {
 		console.log(users[i].user.name)
-		db.insert({
-				hash: hash,
-				email: users[i].user.email
-			})
-			.into('login')
-			.then(db.commit)
-			.catch(db.rollback)
 
-		db.insert({
+		db.transaction(trx => {
+			trx.insert({
 				name: users[i].user.name,
 				email: users[i].user.email,
 				name_pz: name_pz,
@@ -194,12 +156,27 @@ const registerUsers = (req, res, db, bcrypt) => {
 				joined: new Date(),
 			})
 			.into('users')
-			.then(res => {
-				db.commit
-				count += 1;
-				console.log(count)
+			.returning('id')
+			.then(id_user => {
+				console.log(id_user[0])
+				console.log(typeof(id_user[0]))
+				db.insert({
+					id: id_user[0],
+					hash: hash,
+					email: users[i].user.email	
+				})
+				.into('login')
+				.then(user => {
+					count += 1;
+					user[0]
+				})
+				.catch(err => console.log("err log", err))
 			})
-			.catch(db.rollback)
+			.then(trx.commit)
+			.catch(trx.rollback)
+		})
+		.catch(err => console.log("err", err))
+
 		})
 
 	

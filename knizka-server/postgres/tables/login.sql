@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
 CREATE TABLE login (
-    id serial PRIMARY KEY,
+    id int NOT NULL,
     hash VARCHAR(100) NOT NULL,
     email text UNIQUE NOT NULL
 );
