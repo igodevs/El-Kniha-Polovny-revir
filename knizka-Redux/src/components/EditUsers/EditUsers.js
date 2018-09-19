@@ -6,14 +6,25 @@ class EditUsers extends React.Component {
         this.state = {
             users: '',
             isLoad: false,
-            // editMember: false,
-            edited: null
+            name: '',
+            email: '',
+            function_pz: '',
+            edited: null,
+            registrationSuccess:false
         }
     }
 
 
     componentDidMount(){
         this.getUsers();
+    }
+
+    componentDidUpdate(){
+        if(this.state.addNewMember) {
+            this.getUsers();
+            this.setState({addNewMember: false})
+            
+        }
     }
 
     getUsers = () => {
@@ -34,6 +45,63 @@ class EditUsers extends React.Component {
         .catch(console.log)
         
     }
+
+    onFormChange = (event) => {
+		switch(event.target.name){
+			case 'user-name':
+                this.setState({name: event.target.value})
+				break;
+			case 'user-email':
+				this.setState({email: event.target.value})
+				break;
+			case 'user-function_pz':
+				this.setState({function_pz: event.target.value})
+				break;
+			default:
+				return;
+		}
+    }
+    
+    onSubmitRegister = () => {
+    
+        if( this.state.name !== '' && this.state.email !== '' && this.state.function_pz !== ''){
+            let user_object =[ {user: {
+                name: this.state.name,
+                email: this.state.email,
+                function_pz: this.state.function_pz
+                
+            } }]
+            console.log( user_object[0].user)
+            fetch('http://localhost:3000/registerUsers', {
+                method: 'post',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    users: user_object,
+                    name_pz: this.props.user.name_pz
+                })
+            })
+            .then(resp => 
+            {
+                if(resp.status === 200 || resp.status === 304){
+                    this.setState({registrationSuccess: true,
+                    addNewMember: true})
+                }
+            })
+            .catch(console.log())
+
+        }
+
+
+    }
+
+    clearInputs = () => {
+        this.setState({name: '',
+                    email: '',
+                    function_pz: ''
+                })
+    }
     
     
     render() {
@@ -47,7 +115,7 @@ class EditUsers extends React.Component {
                 <div className="registration__block--member--inputs">
                     <div className="registration__block--member--input">
                         <input 
-                        
+                            value = {this.state.name}
                             type="text" 
                             className="form__input registration__block--member--input_block"
                             placeholder= "Meno člena" 
@@ -59,7 +127,7 @@ class EditUsers extends React.Component {
                     </div>
                     <div className="rregistration__block--member--input">
                         <input 
-                            
+                            value = {this.state.email}
                             type="email" 
                             className="form__input registration__block--member--input_block"
                             placeholder= "E-mail" 
@@ -72,7 +140,7 @@ class EditUsers extends React.Component {
 
                     <div className="rregistration__block--member--input">
                         <input 
-                            
+                            value = {this.state.function_pz}
                             type="text" 
                             className="form__input registration__block--member--input_block"
                             placeholder= "Funkcia člena" 
@@ -85,11 +153,27 @@ class EditUsers extends React.Component {
                 </div>
                 <div className="registration__block--member--btn">
                     <button 
-                    
+                    onClick = {this.onSubmitRegister}
                     // }}
                     className="btn">Pridať člena</button>
-                    
                 </div> 
+
+                {
+                    this.state.registrationSuccess && 
+                    <div className= "registration__block--member-open">
+                        <p style = {{textAlign: 'center'}} >Registrácia prebehla úspešne.</p>
+                        <div className="contact__button">
+                            <button 
+                                onClick = {() =>{
+                                    
+                                    this.setState({registrationSuccess: false})
+                                    this.clearInputs()
+                                    
+                                }}
+                                className="btn ">Pokračovať</button>
+                        </div>
+                    </div>
+                }
                 </div>
 
 

@@ -213,7 +213,7 @@ class App extends Component {
                   .then(user => {
                       if(user && user.email){
                             this.props.loadUser(user);
-                            this.changeRoute('book');
+                            this.changeRoute('edit-users');
                       }
                   })
                   .catch(console.log)
@@ -249,6 +249,7 @@ class App extends Component {
         }
         else if(route === 'edit-users'){
             this.props.onRouteChange('edit-users');
+            this.props.onSignIn(true);
             
         }
     }

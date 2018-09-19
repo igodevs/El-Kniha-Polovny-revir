@@ -144,6 +144,7 @@ const registerUsers = (req, res, db, bcrypt) => {
 	const hash = bcrypt.hashSync(password);
 
 	let count = 0;
+
 	users.map((user, i) => {
 		console.log(users[i].user.name)
 

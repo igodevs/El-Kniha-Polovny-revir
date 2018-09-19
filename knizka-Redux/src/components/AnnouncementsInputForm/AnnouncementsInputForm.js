@@ -25,56 +25,11 @@ class AnnouncementsInputForm extends React.Component {
                         })
                     }
         }, 20);
-        // console.log(this.state.selectedFile);
-        // ,() => { 
-        //     if(this.state.selectedFile !== null) {
-        //         this.setState({ 
-        //             selectedFileName: this.state.selectedFile.name
-        //         })
-        //     }
-        // })
 
 
     }
 
     fileUploadHandler = () => {
-        // const fd = new FormData();
-        // fd.append('selectedFile', this.state.selectedFile, this.state.selectedFile.name);
-        // fd.append('name', this.state.name)
-
-        // console.log(fd.name);
-        // fetch('http://localhost:3000/announcements', {
-        //     method: 'post',
-        //     headers: {
-                
-        //         Authorization: window.sessionStorage.getItem('token')
-        //     },
-        //     body: fd
-        // })
-        // .then(resp => {
-        //     if(resp.status === 200){
-        //         fetch('http://localhost:3000/announcementsData', {
-        //             method: 'post',
-        //             headers: {
-        //                 'Content-type': 'application/json',
-        //                 Authorization: window.sessionStorage.getItem('token')
-        //             },
-        //             body: JSON.stringify({
-        //                 name: this.state.name,
-        //                 oznam: this.state.oznam,
-        //                 priloha: this.state.selectedFile.name
-        //             })}
-                    
-        //         ).then(res => res.json("sucess"))
-        //         // .then(data => console.log(data))
-        //         .catch(err => console.log('fetch2'))
-        //     }
-        
-        // })
-        // this.setState({
-        //     selectedFileName: this.state.selectedFile.name
-        // })
-
         fetch('http://localhost:3000/announcementsData', {
                     method: 'post',
                     headers: {
@@ -118,15 +73,8 @@ class AnnouncementsInputForm extends React.Component {
                     }
                     
                 })
-                // .then(data => console.log(data))
                 .catch(err => console.log('fetch2'))
-        
-        
-        // .catch(console.log)
 
-        // axios.post('http://localhost:3000/announcements', fd)
-        // .then(resp=> resp.json())
-        // .catch(err => console.log(err))
         
     }
 
